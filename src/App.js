@@ -13,10 +13,10 @@ function App() {
     const vowels = ["a", "e", "i", "o", "u", "y", "ä", "ö", "å"];
     const consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "r", "s", "t", "v", "w", "z"];
 
-    //vokaali ennen konsonanttia, vokaalin jälkeen katko
-    //kaksi peräkkäistä vokaalia, katko toisen jälkeen
-    //kaksi perättäistä konsonanttia, katko niiden keskeltä
-    
+    //1. vokaali ennen konsonanttia, vokaalin jälkeen katko
+    //2. kaksi peräkkäistä vokaalia, katko toisen jälkeen
+    //3. kaksi perättäistä konsonanttia, katko niiden keskeltä
+
     setCombination(name1 + name2);
   });
 
@@ -35,9 +35,9 @@ function App() {
         >
           Learn React
         </a>
-        <input type="text" value={name1} onChange={e => setName1(e.target.value)} />
-        <input type="text" value={name2} onChange={e => setName2(e.target.value)} />
-        <div>{combination}</div>
+        <input type="text" value={name1} onChange={e => setName1(e.target.value)} data-testid="name1" />
+        <input type="text" value={name2} onChange={e => setName2(e.target.value)} data-testid="name2" />
+        <div data-testid="combination">{combination}</div>
       </header>
     </div>
   );
