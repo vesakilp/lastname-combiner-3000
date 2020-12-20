@@ -44,6 +44,13 @@ function App() {
     return splitName;
   },[]);
 
+  const switchNames = () => {
+    const currentName1 = name1;
+    const currentName2 = name2;
+    setName1(currentName2);
+    setName2(currentName1);
+  };
+
   const combination = capitalize(splitName1) + splitName2;
 
   useEffect(() => {
@@ -57,9 +64,14 @@ function App() {
         <div className="title">
           Last Name<br/>Combinator<br/>3000
         </div>
-        <div>
-          <input type="text" value={name1} onChange={e => setName1(e.target.value)} data-testid="name1" placeholder="last name #1"/><br/>
-          <input type="text" value={name2} onChange={e => setName2(e.target.value)} data-testid="name2" placeholder="last name #2" />
+        <div className="inputs">
+          <div>
+            <input type="text" value={name1} onChange={e => setName1(e.target.value)} data-testid="name1" placeholder="last name #1"/>
+            <input type="text" value={name2} onChange={e => setName2(e.target.value)} data-testid="name2" placeholder="last name #2" />
+          </div>
+          <div>
+            <i className="fas fa-exchange-alt" onClick={switchNames}></i>
+          </div>
         </div>
         <div className="combination" data-testid="combination">{combination}</div>
         <div className="footer">Original idea by Tiina Siik<br/>Implemented by Vesa Kilpiäinen</div>
