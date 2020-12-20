@@ -74,9 +74,9 @@ function App() {
             <input type="text" value={name1} onChange={e => setName1(e.target.value)} data-testid="name1" placeholder="last name #1"/>
             <input type="text" value={name2} onChange={e => setName2(e.target.value)} data-testid="name2" placeholder="last name #2" />
           </div>
-          <div>
+          {/*<div>
             <i className="fas fa-exchange-alt" onClick={switchNames}></i>
-          </div>
+          </div>*/}
         </div>
         <div className="combination" data-testid="combination1">{combination1}</div>
         <div className="combination" data-testid="combination2">{combination2}</div>
