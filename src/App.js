@@ -62,6 +62,7 @@ function App() {
           <input type="text" value={name2} onChange={e => setName2(e.target.value)} data-testid="name2" placeholder="lastname #2" />
         </div>
         <div className="combination" data-testid="combination">{combination}</div>
+        <div className="footer">Original idea by Tiina Siik<br/>Implemented by Vesa Kilpiäinen</div>
       </header>
     </div>
   );

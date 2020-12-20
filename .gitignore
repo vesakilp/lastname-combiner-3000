@@ -105,3 +105,9 @@ dist
 
 # intellij-idea
 .idea/
+
+#build
+.build/
+
+#macos
+.DS_Store
