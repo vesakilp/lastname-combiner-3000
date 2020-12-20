@@ -69,7 +69,7 @@ function App() {
         </a>
         <input type="text" value={name1} onChange={e => setName1(e.target.value)} data-testid="name1" />
         <input type="text" value={name2} onChange={e => setName2(e.target.value)} data-testid="name2" />
-        <div data-testid="combination1">{combination}</div>
+        <div data-testid="combination">{combination}</div>
       </header>
     </div>
   );

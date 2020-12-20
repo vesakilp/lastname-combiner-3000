@@ -12,7 +12,7 @@ test('korhonen + virtanen = kortanen', () => {
   expect(inputName2.value).toBe("virtanen");
 
   const { getByText } = within(getByTestId("combination"));
-  expect(getByText("kortanen")).toBeInTheDocument()
+  expect(getByText("Kortanen")).toBeInTheDocument()
 
 });
 
@@ -27,7 +27,7 @@ test('mäkinen + nieminen = mäminen', () => {
   expect(inputName2.value).toBe("nieminen");
 
   const { getByText } = within(getByTestId("combination"));
-  expect(getByText("mäminen")).toBeInTheDocument()
+  expect(getByText("Mäminen")).toBeInTheDocument()
 
 });
 
@@ -42,7 +42,7 @@ test('kortanen + mäminen = korminen', () => {
   expect(inputName2.value).toBe("mäminen");
 
   const { getByText } = within(getByTestId("combination"));
-  expect(getByText("korminen")).toBeInTheDocument()
+  expect(getByText("Korminen")).toBeInTheDocument()
 
 });
 
@@ -57,7 +57,7 @@ test('mäminen + kortanen = mätanen', () => {
   expect(inputName2.value).toBe("kortanen");
 
   const { getByText } = within(getByTestId("combination"));
-  expect(getByText("mätanen")).toBeInTheDocument()
+  expect(getByText("Mätanen")).toBeInTheDocument()
 
 });
 
@@ -72,7 +72,7 @@ test('virtanen + korhonen = virhonen', () => {
   expect(inputName2.value).toBe("korhonen");
 
   const { getByText } = within(getByTestId("combination"));
-  expect(getByText("virhonen")).toBeInTheDocument()
+  expect(getByText("Virhonen")).toBeInTheDocument()
 
 });
 
@@ -87,7 +87,7 @@ test('nieminen + mäkinen = niekinen', () => {
   expect(inputName2.value).toBe("mäkinen");
 
   const { getByText } = within(getByTestId("combination"));
-  expect(getByText("niekinen")).toBeInTheDocument()
+  expect(getByText("Niekinen")).toBeInTheDocument()
 
 });
 
@@ -102,7 +102,7 @@ test('virhonen + niekinen = virkinen', () => {
   expect(inputName2.value).toBe("niekinen");
 
   const { getByText } = within(getByTestId("combination"));
-  expect(getByText("virkinen")).toBeInTheDocument()
+  expect(getByText("Virkinen")).toBeInTheDocument()
 
 });
 
@@ -117,7 +117,7 @@ test('niekinen + virhonen = niehonen', () => {
   expect(inputName2.value).toBe("virhonen");
 
   const { getByText } = within(getByTestId("combination"));
-  expect(getByText("niehonen")).toBeInTheDocument()
+  expect(getByText("Niehonen")).toBeInTheDocument()
 
 });
 
@@ -132,7 +132,7 @@ test('kortanen + niekinen = korkinen', () => {
   expect(inputName2.value).toBe("niekinen");
 
   const { getByText } = within(getByTestId("combination"));
-  expect(getByText("korkinen")).toBeInTheDocument()
+  expect(getByText("Korkinen")).toBeInTheDocument()
 
 });
 
@@ -147,7 +147,7 @@ test('niekinen + kortanen = nietanen', () => {
   expect(inputName2.value).toBe("kortanen");
 
   const { getByText } = within(getByTestId("combination"));
-  expect(getByText("nietanen")).toBeInTheDocument()
+  expect(getByText("Nietanen")).toBeInTheDocument()
 
 });
 
@@ -162,7 +162,7 @@ test('virhonen + mäminen = virminen', () => {
   expect(inputName2.value).toBe("mäminen");
 
   const { getByText } = within(getByTestId("combination"));
-  expect(getByText("virminen")).toBeInTheDocument()
+  expect(getByText("Virminen")).toBeInTheDocument()
 
 });
 
@@ -177,6 +177,6 @@ test('mäminen + virhonen = mähonen', () => {
   expect(inputName2.value).toBe("virhonen");
 
   const { getByText } = within(getByTestId("combination"));
-  expect(getByText("mähonen")).toBeInTheDocument()
+  expect(getByText("Mähonen")).toBeInTheDocument()
 
 });
