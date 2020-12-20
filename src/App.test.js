@@ -180,18 +180,3 @@ test('mäminen + virhonen = mähonen', () => {
   expect(getByText("mähonen")).toBeInTheDocument()
 
 });
-
-test('string out of bounds error check for first rule', () => {
-  const { getByTestId } = render(<App />);
-  const inputName1 = screen.getByTestId("name1");
-  fireEvent.change(inputName1, { target: { value: "aa" } });
-  expect(inputName1.value).toBe("aa");
-
-  const inputName2 = screen.getByTestId("name2");
-  fireEvent.change(inputName2, { target: { value: "aa" } });
-  expect(inputName2.value).toBe("aa");
-
-  const { getByText } = within(getByTestId("combination"));
-  expect(getByText("aaaa")).toBeInTheDocument()
-
-});
