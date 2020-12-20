@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 function App() {
 
@@ -7,11 +7,6 @@ function App() {
   const [name2, setName2] = useState("");
   const [splitName1, setSplitName1] = useState("");
   const [splitName2, setSplitName2] = useState("");
-
-  useEffect(() => {
-    setSplitName1(splitName(name1, true));
-    setSplitName2(splitName(name2, false));
-  });
 
   const substring = (string, index, returnFirstPart) => {
     if(returnFirstPart) return string.substring(0, index);
@@ -23,7 +18,7 @@ function App() {
     return s.charAt(0).toUpperCase() + s.slice(1)
   };
 
-  const splitName = (name, returnFirstPart) => {
+  const splitName = useCallback((name, returnFirstPart) => {
     const vowels = ["a", "e", "i", "o", "u", "y", "ä", "ö", "å"];
     const consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "r", "s", "t", "v", "w", "z"];
 
@@ -47,19 +42,24 @@ function App() {
       }
     }
     return splitName;
-  };
+  },[]);
 
   const combination = capitalize(splitName1) + splitName2;
+
+  useEffect(() => {
+    setSplitName1(splitName(name1, true));
+    setSplitName2(splitName(name2, false));
+  }, [name1, name2, splitName]);
 
   return (
     <div className="App">
       <header className="App-header">
         <div className="title">
-          Lastname<br/>Combinator<br/>3000
+          Last Name<br/>Combinator<br/>3000
         </div>
         <div>
-          <input type="text" value={name1} onChange={e => setName1(e.target.value)} data-testid="name1" placeholder="lastname #1"/><br/>
-          <input type="text" value={name2} onChange={e => setName2(e.target.value)} data-testid="name2" placeholder="lastname #2" />
+          <input type="text" value={name1} onChange={e => setName1(e.target.value)} data-testid="name1" placeholder="last name #1"/><br/>
+          <input type="text" value={name2} onChange={e => setName2(e.target.value)} data-testid="name2" placeholder="last name #2" />
         </div>
         <div className="combination" data-testid="combination">{combination}</div>
         <div className="footer">Original idea by Tiina Siik<br/>Implemented by Vesa Kilpiäinen</div>
