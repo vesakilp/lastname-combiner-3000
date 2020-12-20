@@ -7,6 +7,8 @@ function App() {
   const [name2, setName2] = useState("");
   const [splitName1, setSplitName1] = useState("");
   const [splitName2, setSplitName2] = useState("");
+  const [splitName3, setSplitName3] = useState("");
+  const [splitName4, setSplitName4] = useState("");
 
   const substring = (string, index, returnFirstPart) => {
     if(returnFirstPart) return string.substring(0, index);
@@ -51,11 +53,14 @@ function App() {
     setName2(currentName1);
   };
 
-  const combination = capitalize(splitName1) + splitName2;
+  const combination1 = capitalize(splitName1) + splitName2;
+  const combination2 = capitalize(splitName3) + splitName4;
 
   useEffect(() => {
     setSplitName1(splitName(name1, true));
     setSplitName2(splitName(name2, false));
+    setSplitName3(splitName(name2, true));
+    setSplitName4(splitName(name1, false));
   }, [name1, name2, splitName]);
 
   return (
@@ -73,7 +78,8 @@ function App() {
             <i className="fas fa-exchange-alt" onClick={switchNames}></i>
           </div>
         </div>
-        <div className="combination" data-testid="combination">{combination}</div>
+        <div className="combination" data-testid="combination1">{combination1}</div>
+        <div className="combination" data-testid="combination2">{combination2}</div>
         <div className="footer">Original idea by Tiina Siik<br/>Implemented by Vesa Kilpiäinen</div>
       </header>
     </div>
