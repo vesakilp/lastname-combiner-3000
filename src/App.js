@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
 
@@ -32,7 +31,7 @@ function App() {
 
     for (var i = 0; i < name.length; i++) {
       //kaksi peräkkäistä vokaalia, katko toisen jälkeen, pitää testata että ei olla ekassa kirjaimessa
-     if(i > 0 && vowels.includes(name.charAt(i)) && vowels.includes(name.charAt(i-1))) {
+      if(i > 0 && vowels.includes(name.charAt(i)) && vowels.includes(name.charAt(i-1))) {
         splitName = substring(name, i+1, returnFirstPart);
         break;
       }
@@ -55,21 +54,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <input type="text" value={name1} onChange={e => setName1(e.target.value)} data-testid="name1" />
-        <input type="text" value={name2} onChange={e => setName2(e.target.value)} data-testid="name2" />
-        <div data-testid="combination">{combination}</div>
+        <div className="title">
+          Lastname<br/>Combinator<br/>3000
+        </div>
+        <div>
+          <input type="text" value={name1} onChange={e => setName1(e.target.value)} data-testid="name1" placeholder="lastname #1"/><br/>
+          <input type="text" value={name2} onChange={e => setName2(e.target.value)} data-testid="name2" placeholder="lastname #2" />
+        </div>
+        <div className="combination" data-testid="combination">{combination}</div>
       </header>
     </div>
   );
