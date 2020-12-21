@@ -62,7 +62,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="title">
-          Last Name<br/>Combinator<br/>3000
+          Last Name<br/>Combiner<br/>3000
         </div>
         <div className="inputs">
           <div>
