@@ -46,7 +46,7 @@ test('kortanen + mäminen = korminen', () => {
 
 });
 
-test('mäminen + kortanen = mätanen', () => {
+test('mäminen + kortanen = mätänen', () => {
   const { getByTestId } = render(<App />);
   const inputName1 = screen.getByTestId("name1");
   fireEvent.change(inputName1, { target: { value: "mäminen" } });
@@ -57,7 +57,7 @@ test('mäminen + kortanen = mätanen', () => {
   expect(inputName2.value).toBe("kortanen");
 
   const { getByText } = within(getByTestId("combination"));
-  expect(getByText("Mätanen")).toBeInTheDocument()
+  expect(getByText("Mätänen")).toBeInTheDocument()
 
 });
 
@@ -166,7 +166,7 @@ test('virhonen + mäminen = virminen', () => {
 
 });
 
-test('mäminen + virhonen = mähonen', () => {
+test('mäminen + virhonen = mähönen', () => {
   const { getByTestId } = render(<App />);
   const inputName1 = screen.getByTestId("name1");
   fireEvent.change(inputName1, { target: { value: "mäminen" } });
@@ -177,6 +177,6 @@ test('mäminen + virhonen = mähonen', () => {
   expect(inputName2.value).toBe("virhonen");
 
   const { getByText } = within(getByTestId("combination"));
-  expect(getByText("Mähonen")).toBeInTheDocument()
+  expect(getByText("Mähönen")).toBeInTheDocument()
 
 });
